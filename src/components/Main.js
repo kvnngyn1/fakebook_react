@@ -1,0 +1,108 @@
+import React, { Component } from 'react';
+import '../App.css';
+import { Switch, Route, Link } from 'react-router-dom';
+import Home from '../views/Home';
+import About from '../views/About';
+import Contact from '../views/Contact';
+import Login from '../views/Login';
+import Profile from '../views/Profile';
+import Register from '../views/Register';
+
+
+export default class Main extends Component {
+    render() {
+        return (
+            <React.Fragment>
+                <header>
+                    {/* This is NOT HTML. IT IS REACT!. everything needs a closing tag else it wont work*/}
+                    <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
+                        <Link className="navbar-brand" to="/">Fakebook Reeact</ Link>
+                        <button className="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
+                        <div className="collapse navbar-collapse" id="collapsibleNavId">
+
+                            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                                <li className="nav-item active">
+                                    <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/about">About</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/contact">Contact</Link>
+                                </li>
+                            </ul>
+                            <ul className="navbar-nav ml-auto">
+                                <li className="nav-item active">
+                                    <Link className="nav-link" to="/login">Login <span className="sr-only">(current)</span></Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/profile">Profile</Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/register">Register</Link>
+                                </li>
+                            </ul>
+                            
+                        </div>
+                    </nav>
+                </header>
+
+                <main className="container">
+                    <Switch>
+                        <Route exact path='/' render={ () => <Home /> }/>
+                        <Route exact path='/about' render={ () => <About /> }/>
+                        <Route exact path='/contact' render={ () => <Contact /> }/>
+                        <Route exact path='/login' render={ () => <Login /> }/>
+                        <Route exact path='/profile' render={ () => <Profile /> }/>
+                        <Route exact path='/register' render={ () => <Register /> }/>
+                    </Switch>
+                </main>
+
+                <footer>
+                    <div class="row">
+                        <div class="col-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                                <li><a href="#">Another Link</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </React.Fragment>
+
+            // Taking data through this.props from App.js
+        //     <div>
+        //         { this.props.info }
+        //     </div>
+        // 
+        )
+    }
+}
+
+
+
