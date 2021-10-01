@@ -5,3 +5,13 @@ header {
 footer {
   margin-top: 35px;
 }
+
+.footer-link {
+  color:white;
+}
+
+#footer-break {
+  height: 1px;
+  background-color: white;
+  border: none;
+}

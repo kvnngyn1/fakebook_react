@@ -8,9 +8,9 @@ import Login from '../views/Login';
 import Profile from '../views/Profile';
 import Register from '../views/Register';
 
-
 export default class Main extends Component {
     render() {
+        // this.props.yes
         return (
             <React.Fragment>
                 <header>
@@ -52,45 +52,26 @@ export default class Main extends Component {
 
                 <main className="container">
                     <Switch>
-                        <Route exact path='/' render={ () => <Home /> }/>
+                        <Route exact path='/' render={ () => <Home posts={ this.props.posts }/> }/>
                         <Route exact path='/about' render={ () => <About /> }/>
                         <Route exact path='/contact' render={ () => <Contact /> }/>
-                        <Route exact path='/login' render={ () => <Login /> }/>
                         <Route exact path='/profile' render={ () => <Profile /> }/>
+                        <Route exact path='/login' render={ () => <Login /> }/>
                         <Route exact path='/register' render={ () => <Register /> }/>
                     </Switch>
                 </main>
 
-                <footer>
-                    <div class="row">
-                        <div class="col-3">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
+                <footer className=" bg-dark">
+                    <div className="container">
+                        <div className="btn-block">
+                            <ul className="list-unstyled  text-white">
+                                <h3>Page Links</h3>
+                                <hr id="footer-break"/>
+                                <li ><Link className="footer-link"to="/">Home</Link></li>
+                                <li ><Link className="footer-link" to="/contact">Contact</Link></li>
                             </ul>
                         </div>
-                        <div class="col-3">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-3">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-3">
-                            <ul class="list-unstyled">
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
-                                <li><a href="#">Another Link</a></li>
-                            </ul>
-                        </div>
+                        
                     </div>
                 </footer>
             </React.Fragment>
